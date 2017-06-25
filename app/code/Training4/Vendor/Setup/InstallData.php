@@ -15,10 +15,10 @@ class InstallData implements InstallDataInterface
 
         $installer = $setup;
 
-        $names = [
-            ['name' => 'Vendor1'],
-            ['name' => 'Vendor2']
-        ];
+        $names = array(
+            array('name' => 'Vendor1'),
+            array('name' => 'Vendor2')
+        );
         
         /*
         * Insert vendor names into training4_vendor
@@ -28,12 +28,12 @@ class InstallData implements InstallDataInterface
         }
 
         /* Products already created in database */
-        $vendorProductLink = [
-            ['vendor_id' => 1, 'product_id' => 1],
-            ['vendor_id' => 1, 'product_id' => 2],
-            ['vendor_id' => 2, 'product_id' => 1],
-            ['vendor_id' => 2, 'product_id' => 2]
-        ];
+        $vendorProductLink = array(
+            array('vendor_id' => 1, 'product_id' => 1),
+            array('vendor_id' => 2, 'product_id' => 1),
+            array('vendor_id' => 2, 'product_id' => 2),
+            array('vendor_id' => 2, 'product_id' => 3)
+        );
 
         /*
         * Insert vendor vendor id and product id into training4_vendor2product
