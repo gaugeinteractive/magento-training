@@ -1,0 +1,10 @@
+<?php 
+/**
+* @var $block Training4\Vendor\Block\Vendor
+*/
+?>
+
+<?php if ($block->getVendor()) : ?>
+    <p>Name: <?php echo $block->getVendor()->getName(); ?></p>
+    <p>Vendor Id: <?php echo $block->getVendor()->getId(); ?></p>
+<?php endif; ?>

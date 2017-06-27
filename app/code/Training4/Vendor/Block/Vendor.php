@@ -13,11 +13,13 @@ class Vendor extends \Magento\Framework\View\Element\Template
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \Magento\Catalog\Block\Product\View $product,
+        \Magento\Framework\Registry $coreRegistry,
         \Training4\Vendor\Model\Vendor $vendor,
         array $data = []
     ) {
         parent::__construct($context, $data);
         $this->product = $product;
+        $this->_coreRegistry = $coreRegistry;
         $this->vendor = $vendor;
     }
 
@@ -29,5 +31,10 @@ class Vendor extends \Magento\Framework\View\Element\Template
     public function getVendors()
     {
         return $this->vendor->getCollection()->addFieldToSelect('name')->addProductIdFilter($this->getProduct()->getId());
+    }
+
+    public function getVendor()
+    {
+        return $this->_coreRegistry->registry('vendor');
     }
 }
