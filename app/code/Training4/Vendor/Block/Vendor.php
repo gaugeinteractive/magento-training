@@ -32,9 +32,4 @@ class Vendor extends \Magento\Framework\View\Element\Template
     {
         return $this->vendor->getCollection()->addFieldToSelect('name')->addProductIdFilter($this->getProduct()->getId());
     }
-
-    public function getVendor()
-    {
-        return $this->_coreRegistry->registry('vendor');
-    }
 }

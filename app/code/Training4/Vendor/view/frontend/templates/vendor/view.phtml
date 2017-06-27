@@ -1,10 +1,22 @@
 <?php 
 /**
-* @var $block Training4\Vendor\Block\Vendor
+* @var $block Training4\Vendor\Block\Vendor\View
 */
 ?>
 
 <?php if ($block->getVendor()) : ?>
     <p>Name: <?php echo $block->getVendor()->getName(); ?></p>
+    <hr>
     <p>Vendor Id: <?php echo $block->getVendor()->getId(); ?></p>
+    <hr>
+    <p>Products</p>
+    <ul>
+        <?php foreach ($block->getVendorProductIds() as $productId) : ?>
+            <li>
+                <p><?php echo $block->getProduct($productId['product_id'])->getName(); ?></p>
+                <p><?php echo '$' . number_format($block->getProduct($productId['product_id'])->getPrice(), 2); ?></p>
+                <p><?php echo $block->getProduct($productId['product_id'])->getUrlKey(); ?></p>
+            </li>
+        <?php endforeach; ?>
+    </ul>
 <?php endif; ?>

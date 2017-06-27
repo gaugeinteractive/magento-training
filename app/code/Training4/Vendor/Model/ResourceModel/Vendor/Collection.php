@@ -15,4 +15,11 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
         $select = $connection->select()->from($this->getTable('training4_vendor2product'), 'vendor_id')->where('product_id = ?', $productId);
         return $this->addFieldToFilter('entity_id', ['in' => $connection->fetchAll($select)]);
     }
+
+    public function addVendorIdFilter($vendorId)
+    {
+        $connection = $this->getConnection();
+        $select = $connection->select()->from($this->getTable('training4_vendor2product'), 'product_id')->where('vendor_id = ?', $vendorId);
+        return $connection->fetchAll($select);
+    }
 }
