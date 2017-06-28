@@ -1,6 +1,6 @@
 <?php
 
-namespace Training4\VendorRepository\Setup;
+namespace Training4\Vendor\Setup;
 
 use Magento\Framework\DB\Ddl\Table;
 use Magento\Framework\Setup\InstallSchemaInterface;

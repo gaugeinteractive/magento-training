@@ -1,6 +1,6 @@
 <?php
 
-namespace Training4\VendorRepository\Controller\Index;
+namespace Training4\Vendor\Controller\Index;
 
 class Index extends \Magento\Framework\App\Action\Action
 {

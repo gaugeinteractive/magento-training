@@ -1,6 +1,6 @@
 <?php
 
-namespace Training4\VendorRepository\Model\ResourceModel;
+namespace Training4\Vendor\Model\ResourceModel;
 
 class Vendor extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 {

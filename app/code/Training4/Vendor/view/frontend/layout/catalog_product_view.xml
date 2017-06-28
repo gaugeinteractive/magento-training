@@ -2,7 +2,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="page.main.title">
-            <block class="Training4\VendorRepository\Block\Vendor" name="training.product.vendor" template="Training4_VendorRepository::vendors.phtml" />
+            <block class="Training4\Vendor\Block\Vendor" name="training.product.vendor" template="Training4_Vendor::vendors.phtml" />
         </referenceContainer>
     </body>
 </page>

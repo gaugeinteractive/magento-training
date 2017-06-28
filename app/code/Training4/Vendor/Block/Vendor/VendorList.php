@@ -1,17 +1,17 @@
 <?php
 
-namespace Training4\VendorRepository\Block\Vendor;
+namespace Training4\Vendor\Block\Vendor;
 
 class VendorList extends \Magento\Framework\View\Element\Template
 {
     /**
      * @param \Magento\Framework\View\Element\Template\Context $context
-     * @param \Training4\VendorRepository\Model\Vendor $vendor
+     * @param \Training4\Vendor\Model\Vendor $vendor
      * @param array $data
      */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
-        \Training4\VendorRepository\Model\Vendor $vendor,
+        \Training4\Vendor\Model\Vendor $vendor,
         array $data = []
     ) {
         parent::__construct($context, $data);
