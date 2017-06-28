@@ -1,11 +1,8 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <head>
-        <title>Vendors</title>
-    </head>
     <body>
         <referenceContainer name="content">
-            <block class="Training4\Vendor\Block\Vendor\VendorList" name="training4.vendor.list" template="Training4_Vendor::vendor/list.phtml"/>
+            <block class="Training4\VendorRepository\Block\Vendor\View" name="training4.vendor.view" template="Training4_VendorRepository::vendor/view.phtml"/>
         </referenceContainer>
     </body>
 </page>

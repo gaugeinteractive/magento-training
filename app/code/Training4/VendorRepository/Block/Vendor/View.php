@@ -1,6 +1,6 @@
 <?php
 
-namespace Training4\Vendor\Block\Vendor;
+namespace Training4\VendorRepository\Block\Vendor;
 
 class View extends \Magento\Framework\View\Element\Template
 {
@@ -8,14 +8,14 @@ class View extends \Magento\Framework\View\Element\Template
      * @param \Magento\Framework\View\Element\Template\Context $context
      * @param \Magento\Framework\Registry $coreRegistry
      * @param \Magento\Catalog\Model\Product $product
-     * @param \Training4\Vendor\Model\Vendor $vendor
+     * @param \Training4\VendorRepository\Model\Vendor $vendor
      * @param array $data
      */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \Magento\Framework\Registry $coreRegistry,
         \Magento\Catalog\Model\Product $product,
-        \Training4\Vendor\Model\Vendor $vendor,
+        \Training4\VendorRepository\Model\Vendor $vendor,
         array $data = []
     ) {
         parent::__construct($context, $data);

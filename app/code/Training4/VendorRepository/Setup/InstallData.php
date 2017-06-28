@@ -1,6 +1,6 @@
 <?php
 
-namespace Training4\Vendor\Setup;
+namespace Training4\VendorRepository\Setup;
 
 use Magento\Framework\Setup\InstallDataInterface;
 use Magento\Framework\Setup\ModuleContextInterface;

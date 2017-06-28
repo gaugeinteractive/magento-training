@@ -1,6 +1,6 @@
 <?php
 
-namespace Training4\Vendor\Controller\Index;
+namespace Training4\VendorRepository\Controller\Index;
 
 class View extends \Magento\Framework\App\Action\Action
 {
@@ -23,7 +23,7 @@ class View extends \Magento\Framework\App\Action\Action
     public function execute()
     {
         $vendorId = $this->getRequest()->getParam('id');
-        $vendor = $this->_objectManager->create('\Training4\Vendor\Model\Vendor')->load($vendorId);
+        $vendor = $this->_objectManager->create('\Training4\VendorRepository\Model\Vendor')->load($vendorId);
         $this->_coreRegistry->register('vendor', $vendor);
         $resultsPage = $this->_resultPageFactory->create();
         $resultsPage->getConfig()->getTitle()->set($vendor->getName());
