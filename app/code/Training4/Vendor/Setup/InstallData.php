@@ -2,15 +2,11 @@
 
 namespace Training4\Vendor\Setup;
 
-use Magento\Framework\Setup\InstallDataInterface;
-use Magento\Framework\Setup\ModuleContextInterface;
-use Magento\Framework\Setup\ModuleDataSetupInterface;
-
-class InstallData implements InstallDataInterface
+class InstallData implements \Magento\Framework\Setup\InstallDataInterface
 {
     public function install(
-        ModuleDataSetupInterface $setup,
-        ModuleContextInterface $context
+        \Magento\Framework\Setup\ModuleDataSetupInterface $setup,
+        \Magento\Framework\Setup\ModuleContextInterface $context
     ) {
 
         $installer = $setup;
