@@ -2,16 +2,11 @@
 
 namespace Training4\Vendor\Setup;
 
-use Magento\Framework\DB\Ddl\Table;
-use Magento\Framework\Setup\InstallSchemaInterface;
-use Magento\Framework\Setup\ModuleContextInterface;
-use Magento\Framework\Setup\SchemaSetupInterface;
-
-class InstallSchema implements InstallSchemaInterface
+class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
 {
     public function install(
-        SchemaSetupInterface $setup,
-        ModuleContextInterface $context
+        \Magento\Framework\Setup\SchemaSetupInterface $setup,
+        \Magento\Framework\Setup\ModuleContextInterface $context
     ) {
         
         $installer = $setup;
@@ -22,13 +17,13 @@ class InstallSchema implements InstallSchemaInterface
         */
         $table = $installer->getConnection()
             ->newTable($installer->getTable('training4_vendor'))
-            ->addColumn('entity_id', Table::TYPE_INTEGER, null, [
+            ->addColumn('entity_id', \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER, null, [
                 'identity' => true,
                 'unsigned' => true,
                 'nullable' => false,
                 'primary' => true,
             ], 'Vendor Id')
-            ->addColumn('name', Table::TYPE_TEXT, 255, [
+            ->addColumn('name', \Magento\Framework\DB\Ddl\Table::TYPE_TEXT, 255, [
                 'nullable' => false
             ], 'Vendor Name')
             ->setComment('Training4 Vendor Entity');
@@ -39,17 +34,17 @@ class InstallSchema implements InstallSchemaInterface
         */
         $table = $installer->getConnection()
             ->newTable($installer->getTable('training4_vendor2product'))
-            ->addColumn('link_id', Table::TYPE_INTEGER, null, [
+            ->addColumn('link_id', \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER, null, [
                 'identity' => true,
                 'unsigned' => true,
                 'nullable' => false,
                 'primary' => true,
             ], 'Vendor Product Link Id')
-            ->addColumn('vendor_id', Table::TYPE_INTEGER, null, [
+            ->addColumn('vendor_id', \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER, null, [
                 'nullable' => false,
                 'unsigned' => true
             ], 'Vendor Id')
-            ->addColumn('product_id', Table::TYPE_INTEGER, null, [
+            ->addColumn('product_id', \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER, null, [
                 'nullable' => false,
                 'unsigned' => true
             ], 'Product Id')
@@ -60,7 +55,7 @@ class InstallSchema implements InstallSchemaInterface
                 'vendor_id',
                 $installer->getTable('training4_vendor'),
                 'entity_id',
-                Table::ACTION_CASCADE
+                \Magento\Framework\DB\Ddl\Table::ACTION_CASCADE
             )->addForeignKey(
                 $installer->getFkName(
                     'training4_vendor2product', 'product_id',
@@ -68,7 +63,7 @@ class InstallSchema implements InstallSchemaInterface
                 'product_id',
                 $installer->getTable('catalog_product_entity'),
                 'entity_id',
-                Table::ACTION_CASCADE
+                \Magento\Framework\DB\Ddl\Table::ACTION_CASCADE
             );
         $installer->getConnection()->createTable($table);
 
