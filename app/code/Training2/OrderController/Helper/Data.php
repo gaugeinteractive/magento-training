@@ -26,7 +26,6 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         if ($order->getId()) {
             $orderData['status'] = $order->getStatus();
             $orderData['total'] = $order->getGrandTotal();
-            $orderData['status'] = $order->getStatus();
 
             foreach ($order->getAllVisibleItems() as $orderItem) {
                 $orderData['items'][$orderItem->getProductId()]['sku'] = $orderItem->getSku();

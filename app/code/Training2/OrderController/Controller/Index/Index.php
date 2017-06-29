@@ -56,6 +56,6 @@ class Index extends \Magento\Framework\App\Action\Action
             $order = array('response' => 'error');
         }
 
-        $this->getResponse()->representJson($this->_jsonHelper->jsonEncode($order));
+        return $this->getResponse()->representJson($this->_jsonHelper->jsonEncode($order));
     }
 }
