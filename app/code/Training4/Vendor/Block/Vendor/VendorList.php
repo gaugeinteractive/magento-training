@@ -20,7 +20,11 @@ class VendorList extends \Magento\Framework\View\Element\Template
 
     public function getAllVendors()
     {
-        return $this->vendor->getCollection()->addFieldToSelect('*');
+        $filter = $this->getChildBlock('training4.vendor.list.filter');
+        if (!$filter->getFilterOrder()) {
+            return $this->vendor->getCollection()->addFieldToSelect('*');
+        }
+        return $this->vendor->getCollection()->addFieldToSelect('*')->setOrder('name', $filter->getFilterOrder());
     }
 
     public function getVendorUrl($id)
