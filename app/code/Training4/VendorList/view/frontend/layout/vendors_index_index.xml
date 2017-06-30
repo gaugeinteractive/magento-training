@@ -5,8 +5,8 @@
     </head>
     <body>
         <referenceContainer name="content">
-            <block class="Training4\VendorList\Block\Vendor\VendorList" name="training4.vendor.list" template="Training4_Vendor::vendor/list.phtml">
-                <block class="Training4\VendorList\Block\Vendor\VendorList\Filter" name="training4.vendor.list.filter" template="Training4_Vendor::vendor/list/filter.phtml" />
+            <block class="Training4\VendorList\Block\Vendor\VendorList" name="training4.vendor.list" template="Training4_VendorList::vendor/list.phtml">
+                <block class="Training4\VendorList\Block\Vendor\VendorList\Filter" name="training4.vendor.list.filter" template="Training4_VendorList::vendor/list/filter.phtml" />
             </block>
         </referenceContainer>
     </body>

@@ -1,6 +1,6 @@
 <?php
 
-namespace Training4\Vendor\Block\Vendor\VendorList;
+namespace Training4\VendorList\Block\Vendor\VendorList;
 
 class Filter extends \Magento\Framework\View\Element\Template
 {
