@@ -1,4 +1,5 @@
 <?php
+
 namespace Training3\OrderInfo\Controller\Index;
 
 class Index extends \Magento\Framework\App\Action\Action
@@ -41,19 +42,9 @@ class Index extends \Magento\Framework\App\Action\Action
         parent::__construct($context);
     }
 
-    public function getJsonParameter()
-    {
-        return $this->getRequest()->getParam('json');
-    }
-
-    public function getOrderId()
-    {
-        return $this->getRequest()->getParam('orderId');
-    }
-
     public function execute()
     {
-        $orderId = $this->getOrderId();
+        $orderId = $this->_helper->getOrderId();
         if ($orderId) {
             $order['response'] = $this->_helper->getOrder($orderId);
         } else {
@@ -61,7 +52,7 @@ class Index extends \Magento\Framework\App\Action\Action
         }
 
         // If json parmeter = 1, show json
-        if ($this->getJsonParameter() == '1') {
+        if ($this->_helper->getJsonParameter() == '1') {
             return $this->getResponse()->representJson($this->_jsonHelper->jsonEncode($order));
         }
 

@@ -1,1 +1,15 @@
-<h1>oi</h1>
+<?php 
+/**
+* @var $block Training3\OrderInfo\Block\OrderInfo
+*/
+?>
+
+<?php if ($block->getOrder()) : ?>
+    <?php $order = $block->getOrder() ?>
+    <h3>Order Details</h3>
+    <p>Status: <?php echo $order["status"]; ?></p>
+    <p>Total: <?php echo '$' . number_format($order["total"], 2); ?></p>
+    <p>Total Invoiced: <?php echo '$' . number_format($order["total_invoiced"], 2); ?></p>
+<?php else: ?>
+    <h3>Order Id does not exist</h3>
+<?php endif; ?>

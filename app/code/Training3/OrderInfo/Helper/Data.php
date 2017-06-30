@@ -12,10 +12,23 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 
     public function __construct(
         App\Helper\Context $context,
-        \Magento\Sales\Model\OrderFactory $orderFactory
+        \Magento\Sales\Model\OrderFactory $orderFactory,
+        \Magento\Framework\App\Request\Http $request
     ) {
         $this->_orderFactory = $orderFactory;
+        $this->_request = $request;
+
         parent::__construct($context);
+    }
+
+    public function getJsonParameter()
+    {
+        return $this->_request->getParam('json');
+    }
+
+    public function getOrderId()
+    {
+        return $this->_request->getParam('orderId');
     }
 
     public function getOrder($orderId)
