@@ -1,0 +1,12 @@
+<?php
+/**
+* @var $block Training4\VendorList\Block\Vendor
+*/
+?>
+
+<?php if ($block->getVendors()) : ?>
+    <h3>Vendors:</h3>
+    <?php foreach ($block->getVendors() as $vendor) : ?>
+        <h3><?php echo $vendor->getName(); ?></h3>
+    <?php endforeach; ?>
+<?php endif; ?>

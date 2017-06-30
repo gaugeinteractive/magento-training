@@ -1,0 +1,14 @@
+<?php 
+/**
+* @var $block Training4\VendorList\Block\List\VendorList
+*/
+?>
+
+<?php if ($block->getAllVendors()) : ?>
+    <?php echo $block->getChildBlock('training4.vendor.list.filter')->toHtml(); ?>
+    <ul>
+        <?php foreach ($block->getAllVendors() as $vendor) : ?>
+            <li><a href="<?php echo $block->getVendorUrl($vendor->getId()); ?>"><?php echo $vendor->getName(); ?></a></li>
+        <?php endforeach; ?>
+    </ul>
+<?php endif; ?>
