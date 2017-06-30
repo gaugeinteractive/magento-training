@@ -1,4 +1,5 @@
 <?php
+
 namespace Training2\OrderController\Controller\Index;
 
 class Index extends \Magento\Framework\App\Action\Action
@@ -41,11 +42,6 @@ class Index extends \Magento\Framework\App\Action\Action
         parent::__construct($context);
     }
 
-    /**
-     * Default customer account page
-     *
-     * @return void
-     */
     public function execute()
     {
         $orderId = $this->getRequest()->getParam('orderId');
